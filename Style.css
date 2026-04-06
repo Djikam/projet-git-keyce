@@ -1,0 +1,287 @@
+/* ===========================
+   STYLE.CSS — Projet Git KEYCE
+   Groupe N° — 2024/2025
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary: #1a1a2e;
+  --secondary: #16213e;
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --text: #eaeaea;
+  --text-muted: #a0a0b0;
+  --card-bg: rgba(255,255,255,0.05);
+  --border: rgba(233,69,96,0.3);
+  --radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primary);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- HEADER ---- */
+header {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent2) 100%);
+  border-bottom: 3px solid var(--accent);
+  padding: 40px 20px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(233,69,96,0.2), transparent);
+  border-radius: 50%;
+}
+
+.header-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.groupe-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.titre-groupe {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 4px;
+  color: #fff;
+  line-height: 1;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+  background: var(--secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+}
+
+.navbar ul li a {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+/* ---- MAIN ---- */
+main.contenu {
+  flex: 1;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+}
+
+.hero h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.hero p strong {
+  color: var(--text);
+}
+
+/* ---- CARDS MEMBRES ---- */
+.membres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.membre-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  display: block;
+}
+
+.membre-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(233,69,96,0.2);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+}
+
+.membre-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.membre-card span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--secondary);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* ---- PAGE SECONDAIRE ---- */
+.page-secondaire header .membre-nom {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--accent);
+  font-weight: 300;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+.page-secondaire main.contenu {
+  padding: 50px 20px;
+}
+
+.contenu-membre {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.contenu-membre h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.contenu-membre p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.btn-retour {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-retour:hover {
+  opacity: 0.85;
+  transform: translateX(-3px);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .hero {
+    padding: 24px 16px;
+  }
+
+  .membres-grid {
+    grid-template-columns: 1fr;
+  }
+}
